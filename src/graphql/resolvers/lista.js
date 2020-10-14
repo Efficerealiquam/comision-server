@@ -4,8 +4,8 @@ const Producto = require("../../models/Producto");
 module.exports = {
   Query: {
     getListaActual: async (_, { idLista }) => {
-      const lista = await Lista.findOne({ _id: idLista });
-      if (lista) {
+      if (idLista !== "") {
+        const lista = await Lista.findOne({ _id: idLista });
         return lista;
       } else {
         throw new Error("No tiene una lista Actualmente");
