@@ -79,10 +79,14 @@ module.exports = {
 
         const upProducto = await Producto.findById(id);
         if (upProducto) {
-          const upPro = await Producto.findByIdAndUpdate(id, {
-            precio,
-            porcentaje,
-          });
+          const upPro = await Producto.findByIdAndUpdate(
+            id,
+            {
+              precio,
+              porcentaje,
+            },
+            { new: true }
+          );
           return upPro;
         } else {
           throw new Error("Producto no encontrado");
