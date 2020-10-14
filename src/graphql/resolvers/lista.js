@@ -53,8 +53,8 @@ module.exports = {
           },
           {
             arrayFilters: [{ "elem._id": proId }],
-          },
-          { new: true }
+            new: true,
+          }
         );
 
         if (lista) {
