@@ -24,7 +24,8 @@ module.exports = {
           cantidad,
         });
         await lista.save();
-        return lista;
+        const upL = await Lista.findById(idLista);
+        return upL;
       } else {
         const producto = await Producto.findById(proId);
         const newLista = new Lista({
