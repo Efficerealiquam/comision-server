@@ -18,7 +18,7 @@ module.exports = {
     getProductos: async () => {
       try {
         const productos = await Producto.find().sort({
-          createdAt: -1,
+          nombre: 1,
         });
         return productos;
       } catch (err) {
